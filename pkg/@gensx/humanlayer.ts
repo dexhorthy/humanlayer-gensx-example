@@ -19,6 +19,9 @@ class GenSXHumanLayer {
   constructor(options: HumanLayerParams) {
     this.humanLayer = new HumanLayer(options);
   }
+  /**
+   todo the input to this should be a ContactChannel, and return a function(fn : GSXTool) -> GSXTool
+  */
   requireApproval<TSchema extends GSXToolAnySchema>(fn: GSXTool<TSchema>): GSXTool<TSchema> {
     return new GSXTool<TSchema>({
       name: fn.name,
